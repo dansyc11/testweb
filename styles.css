@@ -1,0 +1,210 @@
+
+/* ==== BASE TYPO & LAYOUT ==== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+:root{
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --brand:#1f6feb;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height:1.6;
+}
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+/* ==== HEADER ==== */
+.header{
+  position:sticky;top:0;z-index:50;background:#fff;
+  backdrop-filter: blur(8px); border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px}
+.brand img{height:40px;width:auto;display:block}
+.nav a{
+  text-decoration:none;color:#333;margin:0 12px;font-weight:600;
+  border-bottom:2px solid transparent;padding-bottom:4px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.nav a:hover{ color:#ff8a00; border-color:#ff8a00; }
+.nav a.active{ color:#ff8a00; border-color:#ff8a00; }
+/* Mobile nav */
+.menu-toggle{display:none;background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:18px;cursor:pointer}
+@media (max-width: 800px){
+  .menu-toggle{display:inline-block}
+  .nav{display:none; flex-direction:column; gap:10px; position:absolute; right:16px; top:64px;
+       background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px;
+       box-shadow:0 10px 24px rgba(0,0,0,.08);}
+  .nav.show{display:flex}
+  .header-inner{position:relative}
+  .nav a{margin:4px 6px;}
+}
+.brand span{display:none}
+
+/* ==== HERO & BADGES ==== */
+.hero{
+  position: relative;
+  padding: clamp(80px, 10vw, 120px) 0 80px;
+  text-align: center;
+  background: linear-gradient(180deg, #eef9ff, #ffffff);
+}
+.eyebrow{color:#4f8b3a;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;margin-bottom:14px}
+.display{font-size: clamp(36px, 6vw, 72px);line-height:1.05;font-weight:800;color:#0b1220;margin: 0 0 16px;}
+.badge{display:inline-block;background:#ead8cc;color:#2a2a2a;padding:8px 14px;border-radius:10px;line-height:1;transform: translateY(6px)}
+.cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top: 28px; margin-bottom: 28px;}
+.cta-primary{display:inline-block;padding:14px 20px;border-radius:14px;background:#ff8a00;color:#fff;text-decoration:none;font-weight:700;border: 1px solid rgba(0,0,0,0.06);box-shadow: 0 6px 14px rgba(255,138,0,.22);}
+.chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+.chip{display:inline-block;padding:10px 16px;border-radius:999px;background:#ead8cc;color:#1f2937;font-weight:600;border:1px solid rgba(0,0,0,0.06)}
+
+/* ==== STATS ==== */
+.stats{margin:32px auto 0;max-width:1100px}
+.stats-card{border-radius:22px;background: linear-gradient(180deg, #fff7e5, #ffffff);box-shadow: 0 20px 50px rgba(0,0,0,.08);border: 1px solid var(--border);padding: clamp(18px, 3vw, 28px)}
+.stats-grid{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 36px}
+@media (max-width: 800px){.stats-grid{ grid-template-columns: 1fr } }
+.stat{text-align:center;padding:36px 20px;border-radius:20px;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,0.06);border:1px solid #e5e7eb}
+.stat .num{font-size: clamp(40px, 5vw, 60px);font-weight: 800;color: #3c7a2f;margin-bottom:10px}
+.stat .label{color:#475569;font-size:15px;line-height:1.5}
+.emoji{font-size:42px;display:block;margin-bottom:10px}
+
+/* ==== SECTIONS ==== */
+.section-hero{background: linear-gradient(180deg, #f4ffef, #ffffff);padding: clamp(64px, 10vw, 120px) 0 40px;text-align: center;}
+.footer{border-top:1px solid var(--border);background:#fafafa;margin-top:56px}
+.footer .container{padding:18px 16px;color:#64748b;font-size:14px;text-align:center}
+
+/* ==== Helpers ==== */
+.fluid-img{display:block;width:min(100%, 1100px);height:auto;margin:0 auto;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+
+
+
+/* ===== Active nav highlighting ===== */
+.nav a {
+  text-decoration:none;color:#334155;
+  padding:6px 2px;margin:0 10px;border-bottom:2px solid transparent;transition:all .2s;
+  font-weight:600; white-space:nowrap;
+}
+.nav a:hover{border-color:var(--brand); color: var(--brand);}
+.nav a.active{border-color:#ff8a00; color:#ff8a00;} /* highlight current page */
+
+/* ===== Responsive image helper ===== */
+.responsive-img{
+  display:block; margin:0 auto;
+  width: min(96vw, 1100px); /* scales with zoom and viewport */
+  height:auto;
+  border-radius:12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+/* === Nav active/hover color === */
+.nav a{
+  text-decoration:none;
+  color:#333;
+  margin:0 12px;
+  font-weight:600;
+  border-bottom:2px solid transparent;
+  padding-bottom:4px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.nav a:hover{ color:#ff8a00; border-color:#ff8a00; }
+.nav a.active{ color:#ff8a00; border-color:#ff8a00; }
+
+/* === Responsive image helper === */
+.fluid-img{
+  display:block;
+  width: min(100%, 1100px);   /* scales with zoom/viewport, capped so it isn't huge */
+  height:auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+/* === Standardized Header Dimensions === */
+.header { background:#fff; }
+.header-inner{ padding: 14px 0; }
+.brand img{ height: 44px; width:auto; display:block; }
+.nav a{ line-height: 1; }
+
+/* === About banner uses same hero background image === */
+.about-banner{
+  background: linear-gradient(180deg, #f4ffe9, #ffffff);
+  position: relative;
+  text-align: center;
+  padding: clamp(80px, 12vw, 140px) 0 24px;
+}
+.about-banner::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: url('hero-bg.png') bottom center / cover no-repeat;
+  opacity: 0.75;
+  pointer-events: none;
+}
+.about-banner > *{ position: relative; z-index: 1; }
+
+
+/* === Hero background art === */
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background: url('hero-bg.png') bottom center / cover no-repeat;
+  opacity:.9;
+  pointer-events:none;
+}
+.hero > *{ position:relative; z-index:1; }
+
+
+/* Sticky header + shadow on scroll */
+.header{ position: sticky; top: 0; z-index: 100; background:#fff; transition: box-shadow .2s ease; }
+.header.scrolled{ box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+
+
+/* === Founder image block === */
+.founder-section{ padding: 24px 0 8px; }
+.founder-caption{ text-align:center; color:#334155; margin: 8px 0 0; font-weight:600; }
+@media (max-width: 600px){
+  .founder-section{ padding: 16px 0 0; }
+}
+
+
+/* === Modal (mentors) === */
+.modal-overlay{
+  position: fixed; inset: 0; background: rgba(15,23,42,.5);
+  backdrop-filter: blur(2px); z-index: 90;
+}
+.modal{
+  position: fixed; inset: 0; display: grid; place-items: center; z-index: 91;
+}
+.modal-card{
+  width: min(92vw, 860px); background:#fff; border:1px solid #e5e7eb;
+  border-radius: 22px; box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.modal-close{
+  position:absolute; top:8px; right:12px; font-size:28px; line-height:1;
+  width:40px; height:40px; border-radius:10px; border:1px solid #e5e7eb; background:#fff; cursor:pointer;
+}
+.modal-header{ padding: 18px 20px 0; text-align:center; }
+.modal-body{ display:grid; grid-template-columns: 1fr; gap: 14px; padding: 6px 16px 20px; }
+.modal-media img{ display:block; width:100%; height:auto; border-radius: 12px; }
+.modal-text{ padding: 0 4px; }
+@media (min-width: 780px){
+  .modal-body{ grid-template-columns: 1fr 1.1fr; align-items: center; }
+  .modal-media img{ border-radius: 14px; }
+}
+
+
+/* === Mentor Stats Sheet === */
+.sheet{ margin: 6px 0 14px; display:grid; gap:8px; }
+.sheet-row{ display:grid; grid-template-columns: 130px 1fr; gap:10px; align-items:start; }
+.sheet-label{ font-weight:800; color:#0f172a; }
+.sheet-value{ color:#334155; }
+.sheet-heading{ margin: 10px 0 6px; font-size:18px; font-weight:800; }
+.bullets.tight{ margin-top:6px; }
+.bullets.tight li{ margin:4px 0; }
+
+/* Close button adjustments */
+.modal-close{ background:#fff; color:#0f172a; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.modal-close:hover{ background:#fafafa; }

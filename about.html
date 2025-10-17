@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Lumine Mentors</title>
+  <meta name="description" content="About LumineMentors: expert mentorship for admissions, careers, and personal growth." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .about-banner{ background: linear-gradient(180deg, #f4ffe9, #ffffff); text-align:center; padding: clamp(80px, 12vw, 140px) 0 20px; }
+    .about-banner img{ height:64px; width:auto; }
+    .about-content{ max-width:980px; margin:0 auto; padding: clamp(48px, 6vw, 72px) 16px 64px; }
+    .about-content h1{ text-align:center; font-size: clamp(32px, 5vw, 48px); margin: 0 0 18px; font-weight:800; }
+    .about-content p{ color:#334155; font-size: clamp(16px, 1.6vw, 19px); line-height:1.8; margin:0 0 20px; max-width:900px; margin-left:auto; margin-right:auto; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" class="active" aria-label="Lumine Mentors">
+        <img src="logo.webp" alt="Lumine Mentors">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" data-collapsible>
+        <a href="index.html">Home</a>
+        <a href="mentoring.html">Mentoring</a><a href="mentors.html">Mentors</a>
+        <a href="about.html" class="active" class="active">About</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-banner">
+    <div class="container">
+      <img src="logo.webp" alt="Lumine logo">
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="about-content">
+      <h1>About LumineMentors</h1>
+      <p>At Lumine, we believe that every individual deserves the right support to achieve their full potential. As a premier platform for admissions and career mentorship, we specialize in guiding students and young professionals through pivotal life transitions, from college and Master's applications to career advancement and personal growth.</p>
+      <p>Our approach combines expert mentorship, innovative tools, and proven strategies to help you take confident, intentional steps toward your goals. With Lumine, you don't just plan for the future, you illuminate it.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Lumine Mentors. All rights reserved.</div>
+  </footer>
+  
+
+
+
+  
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var h = document.querySelector('.header');
+  function onScroll(){ if(window.scrollY > 4){ h.classList.add('scrolled'); } else { h.classList.remove('scrolled'); } }
+  window.addEventListener('scroll', onScroll); onScroll();
+  var btn = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('nav.nav[data-collapsible]');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('show');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+});
+</script>
+
+</body>
+</html>

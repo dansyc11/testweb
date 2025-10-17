@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumine Mentors – Home</title>
+  <meta name="description" content="Find a mentor who's been there, done that. 2000+ mentees helped, 100+ expert coaches, 50+ backgrounds." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Founder image block (light gradient) */
+    .founder-section{ padding: 28px 0 20px; background: linear-gradient(180deg, #fafcfb, #ffffff); }
+    .founder-caption{ text-align:center; color:#334155; margin: 10px 0 0; font-weight:600; }
+    /* Simple reveal-on-scroll animation */
+    .reveal{ opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible{ opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Lumine Mentors">
+        <img src="logo.webp" alt="Lumine Mentors">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" data-collapsible>
+        <a href="index.html" class="active">Home</a>
+        <a href="mentoring.html">Mentoring</a><a href="mentors.html">Mentors</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">They've been there, done that</div>
+      <h1 class="display">Find a mentor who'll light<br/> the way to your dream <span class="badge">University</span></h1>
+
+      <div class="cta-row">
+        <a href="mentoring.html" class="cta-primary">Book Free 15‑Minute Consultation</a>
+      </div>
+
+      <h3 style="margin:40px 0 12px; font-size:18px;">Popular Mentoring</h3>
+      <div class="chips">
+        <span class="chip">SAT</span>
+        <span class="chip">MBA</span>
+        <span class="chip">IELTS</span>
+        <span class="chip">Management Consulting</span>
+        <span class="chip">A-Levels</span>
+        <span class="chip">Essays</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Section (moved ABOVE stats) -->
+  <section class="founder-section reveal">
+    <div class="container">
+      <img src="founder.png" alt="Our Founder" class="fluid-img">
+      <p class="founder-caption">Our Founder, and Your mentor</p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-card">
+      <h2 style="text-align:center; margin: 0 0 8px;">Trusted by Thousands Worldwide</h2>
+      <p class="lead" style="text-align:center; margin-top:0;">Join our community of successful mentees who've achieved their dreams</p>
+
+      <div class="stats-grid" style="margin-top: 30px;">
+        <div class="stat">
+          <span class="emoji">🎯</span>
+          <div class="num">2000+</div>
+          <div class="label">Mentees helped to achieve their<br/>dream career</div>
+        </div>
+        <div class="stat">
+          <span class="emoji">🌏</span>
+          <div class="num">100+</div>
+          <div class="label">Expert coaches from across the<br/>world</div>
+        </div>
+        <div class="stat">
+          <span class="emoji">🏆</span>
+          <div class="num">50+</div>
+          <div class="label">Professional backgrounds & Ivy<br/>League expertises</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">© 2025 Lumine Mentors. All rights reserved.</div>
+  </footer>
+
+  <!-- Menu toggle + header shadow (if your styles.css includes sticky header classes) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // header shadow on scroll
+    var h = document.querySelector('.header');
+    function onScroll(){ if(window.scrollY > 4){ h.classList.add('scrolled'); } else { h.classList.remove('scrolled'); } }
+    window.addEventListener('scroll', onScroll); onScroll();
+    // hamburger toggle
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.querySelector('nav.nav[data-collapsible]');
+    if(btn && nav){
+      btn.addEventListener('click', function(){
+        var open = nav.classList.toggle('show');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    // reveal-on-scroll
+    var revealEls = document.querySelectorAll('.reveal');
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    revealEls.forEach(function(el){ obs.observe(el); });
+  });
+  </script>
+</body>
+</html>

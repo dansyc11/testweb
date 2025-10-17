@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Christian Chonardo – Mentor Profile | Lumine Mentors</title>
+  <meta name="description" content="Mentor profile for Christian Chonardo: focus areas, approach, and how to book a consultation." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .profile-hero{ background: linear-gradient(180deg, #f4ffe9, #ffffff); padding: clamp(80px, 12vw, 140px) 0 24px; text-align:center; }
+    .profile-hero h1{ font-size: clamp(28px, 5vw, 42px); margin: 0 0 10px; font-weight:800; }
+    .profile-content{ max-width: 980px; margin: 0 auto; padding: 20px 16px 64px; display:grid; grid-template-columns: 1fr; gap:20px; }
+    .profile-card{ border-radius:22px; background:#fff; border:1px solid #e5e7eb; box-shadow:0 10px 24px rgba(0,0,0,0.06); overflow:hidden; }
+    .profile-media{ position:relative; aspect-ratio: 16 / 9; background:#f3f4f6; }
+    .profile-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .profile-body{ padding:18px 16px; }
+    .profile-body h2{ margin: 6px 0 10px; font-size: 22px; }
+    .bullets{ margin: 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+    .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Lumine Mentors">
+        <img src="logo.webp" alt="Lumine Mentors">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" data-collapsible>
+        <a href="index.html">Home</a>
+        <a href="mentoring.html">Mentoring</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="profile-hero">
+    <div class="container">
+      <h1>Christian Chonardo</h1>
+      <p class="lead" style="max-width:860px;margin:0 auto;color:#334155;">Founder and lead mentor. Focus areas include admissions strategy, compelling essays, and interview preparation.</p>
+    </div>
+  </section>
+
+  <main class="profile-content">
+    <article class="profile-card">
+      <div class="profile-media">
+        <img src="founder.png" alt="Christian Chonardo">
+      </div>
+      <div class="profile-body">
+        <h2>About</h2>
+        <ul class="bullets">
+          <li>Guided thousands of mentees toward offers from top global universities.</li>
+          <li>Structured, outcome-driven sessions with tactical feedback and next steps each time.</li>
+          <li>Specialties: Admissions strategy, essays, interview prep.</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="cta-primary" href="mentoring.html" target="_blank" rel="noopener">Book Free 15‑Minute Consultation</a>
+          <a class="cta-outline" href="mentors.html">Back to Mentors</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Lumine Mentors. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var h = document.querySelector('.header');
+      function onScroll(){ if(window.scrollY > 4){ h.classList.add('scrolled'); } else { h.classList.remove('scrolled'); } }
+      window.addEventListener('scroll', onScroll); onScroll();
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('nav.nav[data-collapsible]');
+      if(btn && nav){
+        btn.addEventListener('click', function(){
+          var open = nav.classList.toggle('show');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

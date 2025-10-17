@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentoring | Lumine Mentors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  
+  
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Lumine Mentors">
+        <img src="logo.webp" alt="Lumine Mentors">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" data-collapsible>
+        <a href="index.html">Home</a>
+        <a href="mentoring.html" class="active">Mentoring</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <section class="hero">
+    <h1>We've Helped Mentees Get Accepted<br>Into the World's Best Universities</h1>
+    <p>From Oxford to Tsinghua, our mentees have gained admission to nearly every top global university in the <strong>QS Top 25</strong>.</p>
+    <img class="responsive-img" src="universities.png" alt="Top Universities where Lumine Mentors Mentees Got Accepted">
+  </section>
+
+  <section class="calendly-section">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/outreach-luminementors" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </section>
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var h = document.querySelector('.header');
+  function onScroll(){ if(window.scrollY > 4){ h.classList.add('scrolled'); } else { h.classList.remove('scrolled'); } }
+  window.addEventListener('scroll', onScroll); onScroll();
+  var btn = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('nav.nav[data-collapsible]');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('show');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+});
+</script>
+
+</body>
+</html>
